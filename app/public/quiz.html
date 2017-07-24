@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>quiz</title>
+	<!-- install bootstrap/jquery -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  	<script src="https://code.jquery.com/jquery.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+	<div class="jumbotron">
+		<h1>Finding your match is easy!</h1>
+		<h3>Just fill in the questions below to meet your soulmate</h3>
+		
+	</div>
+	<div>
+		<h3>Personal info</h3>
+		<form>
+			<div class="form-group">
+				<label for="user-name">Name</label>
+                <input type="text" class="form-control" id="user-name">
+			</div>
+			<div class="form-group">
+				<label for="photo-link">Photo link</label>
+                <input type="text" class="form-control" id="photo-link">
+			</div>
+			<hr>
+			<h4>I prefer a covered litter box to one without a cover.</h4>
+			<select id="question1" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>That one empty corner of the living room is the enemy.</h4>
+			<select id="question2" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>I often meow loudly to warn the humans that they are coming. THEY. ARE. COMING. They will devour us all.</h4>
+			<select id="question3" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+			  		<h4>This is mine. That is mine. Everything is mine.</h4>
+			<select id="question4" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>It is perfectly acceptable to bite someone if they disturb your nap.</h4>
+			<select id="question5" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>Feet are the enemy.</h4>
+			<select id="question6" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>I enjoy belly rubs.</h4>
+			<select id="question7" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>It is importnt to tell parnters about your health and vaccination history BEFORE you boop noses.</h4>
+			<select id="question8" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>Dogs are the enemy.</h4>
+			<select id="question9" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+				<h4>I prefer to hunt for my food instead of eating what the human gives me.</h4>
+			<select id="question10" class="custom-select">
+  				<option selected></option>
+			  	<option value="1">1 (Strongly disagree)</option>
+			  	<option value="2">2</option>
+			  	<option value="3">3</option>
+			  	<option value="4">4</option>
+			  	<option value="5">5 (Strongly agree)</option>
+			</select>
+			<br>
+			<button type="submit" class="btn btn-primary submit">Submit</button>
+		</form>
+	</div>
+
+	<div id="match" class="modal fade" tabindex="-1">
+		<div class="modal-dialog" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h3>Your Match:</h3>
+					<hr>
+				</div>
+				<div class="modal-body">
+					<h4 id="matchName"></h4>
+					<img id="matchImage" src="">
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+					
+				</div>
+				
+			</div>
+			
+		</div>
+		
+	</div>
+	
+</div>
+	
+</body>
+
+<script type="text/javascript">
+	// make data from the form go to the server
+	   $(".submit").on("click", function(event) {
+      event.preventDefault();
+
+
+      // get data from form entry & assign to table
+        var newFriend = {
+        name: $("#user-name").val().trim(),
+        photoLink: $("#photo-link").val().trim(),
+        question1: $("#question1").val().trim(),
+        question2: $("#question2").val().trim(),
+        question3: $("#question3").val().trim(),
+        question4: $("#question4").val().trim(),
+        question5: $("#question5").val().trim(),
+        question6: $("#question6").val().trim(),
+        question7: $("#question7").val().trim(),
+        question8: $("#question8").val().trim(),
+        question9: $("#question9").val().trim(),
+        question10: $("#question10").val().trim()
+
+      };
+
+      // put data in express server
+        $.post("/api/tables", newFriend,
+        function(data){
+
+
+        // clear the form
+        $("#user-name").val("");
+        $("#photo-link").val("");
+        $("#question1").val("");
+        $("#question2").val("";)
+        $("#question3").val("");
+        $("#question4").val("");
+        $("#question5").val("");
+        $("#question6").val("");
+        $("#question7").val("");
+        $("#question8").val("");
+        $("#question9").val("");
+        $("#question10").val("");
+
+
+        }
+
+
+
+
+
+
+
+
+</script>
+</html>
