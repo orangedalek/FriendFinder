@@ -55,7 +55,7 @@
 			  	<option value="4">4</option>
 			  	<option value="5">5 (Strongly agree)</option>
 			</select>
-			  		<h4>This is mine. That is mine. Everything is mine.</h4>
+			  	<h4>This is mine. That is mine. Everything is mine.</h4>
 			<select id="question4" class="custom-select">
   				<option selected></option>
 			  	<option value="1">1 (Strongly disagree)</option>
@@ -175,6 +175,11 @@
       // put data in express server
         $.post("/api/tables", newFriend,
         function(data){
+
+        	// fill in the results and show them to the user
+    		$("#matchName").text(data.name);
+    		$('#matchImage').attr("src", data.photo);
+	    	$("#match").modal('toggle');
 
 
         // clear the form
