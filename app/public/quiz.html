@@ -126,13 +126,13 @@
 	<div id="match" class="modal fade" tabindex="-1">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-				<div class="modal-header">
+			<!-- 	<div class="modal-header">
 					<h3>Your Match:</h3>
 					<hr>
 				</div>
-				<div class="modal-body">
-					<h4 id="matchName"></h4>
-					<img id="matchImage" src="">
+				<div class="modal-body"> -->
+					<!-- <h4 id="matchName"></h4> -->
+				<!-- 	<img id="matchImage" src=""> -->
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -152,41 +152,38 @@
 <script type="text/javascript">
 	// make data from the form go to the server
 	   $(".submit").on("click", function(event) {
-      event.preventDefault();
+      	event.preventDefault();
 
 
       // get data from form entry & assign to table
-        var newFriend = {
+        var newUser = {
         name: $("#user-name").val().trim(),
-        photoLink: $("#photo-link").val().trim(),
-        question1: $("#question1").val().trim(),
-        question2: $("#question2").val().trim(),
-        question3: $("#question3").val().trim(),
-        question4: $("#question4").val().trim(),
-        question5: $("#question5").val().trim(),
-        question6: $("#question6").val().trim(),
-        question7: $("#question7").val().trim(),
-        question8: $("#question8").val().trim(),
-        question9: $("#question9").val().trim(),
-        question10: $("#question10").val().trim()
+        photo: $("#photo-link").val().trim(),
+        scores: [$("#question1").val().trim(),
+        $("#question2").val().trim(),
+        $("#question3").val().trim(),
+        $("#question4").val().trim(),
+        $("#question5").val().trim(),
+        $("#question6").val().trim(),
+        $("#question7").val().trim(),
+        $("#question8").val().trim(),
+        $("#question9").val().trim(),
+  		$("#question10").val().trim()]
 
       };
 
       // put data in express server
-        $.post("/api/tables", newFriend,
+        $.post("/api/friends", newUser,
         function(data){
 
-        	// fill in the results and show them to the user
-    		$("#matchName").text(data.name);
-    		$('#matchImage').attr("src", data.photo);
-	    	$("#match").modal('toggle');
+
 
 
         // clear the form
         $("#user-name").val("");
         $("#photo-link").val("");
         $("#question1").val("");
-        $("#question2").val("";)
+        $("#question2").val("");
         $("#question3").val("");
         $("#question4").val("");
         $("#question5").val("");
@@ -197,7 +194,18 @@
         $("#question10").val("");
 
 
-        }
+
+        	// fill in the results and show them to the user
+ 
+ 	
+ 		$('.modal-content').html('<h1>Your purrfect match!</h1>' + 
+ 			'<h3> ' + data.matchName + '</h3>' + 
+ 			'<img src="' + data.matchPhoto + '" width=300px>');
+ 			$('#match').modal('toggle');
+ 			
+        });
+ 		
+       });
 
 
 
