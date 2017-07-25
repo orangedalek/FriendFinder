@@ -126,13 +126,13 @@
 	<div id="match" class="modal fade" tabindex="-1">
 		<div class="modal-dialog" role="document">
 			<div class="modal-content">
-			<!-- 	<div class="modal-header">
+				<div class="modal-header">
 					<h3>Your Match:</h3>
 					<hr>
 				</div>
-				<div class="modal-body"> -->
-					<!-- <h4 id="matchName"></h4> -->
-				<!-- 	<img id="matchImage" src=""> -->
+				<div class="modal-body">
+					<h4 id="matchName"></h4>
+					<img id="matchImage" src="">
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -198,10 +198,8 @@
         	// fill in the results and show them to the user
  
  	
- 		$('.modal-content').html('<h1>Your purrfect match!</h1>' + 
- 			'<h3> ' + data.matchName + '</h3>' + 
- 			'<img src="' + data.matchPhoto + '" width=300px>');
- 			$('#match').modal('toggle');
+ 		$("#matchName").html(matchName);
+ 		$("#matchImage").attr("src", matchPhoto)
  			
         });
  		

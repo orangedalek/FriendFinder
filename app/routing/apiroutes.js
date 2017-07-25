@@ -45,11 +45,10 @@ module.exports = function(app){
         					matchPhoto.push(friendPhoto);
       				};
       				
-      				// console.log(totalDifference);
-
 
       				}
 
+      				console.log(matchName[0]);
 	 
       			
 
